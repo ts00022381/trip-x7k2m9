@@ -1,0 +1,752 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>福岡・由布院 親子自駕慢遊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFCF6; --ink:#3E3A39;
+  --coral:#F2A497; --yellow:#F6D27A; --blue:#A8D3E6; --green:#B9DAA5;
+  --line:3px solid var(--ink);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Huninn","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  font-weight:400;background:var(--paper);color:var(--ink);line-height:1.65;
+  padding-top:66px;padding-bottom:40px;
+}
+b,strong,h1,h2,h3,h4{font-weight:400}
+a{color:inherit}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+
+/* ---------- top nav ---------- */
+nav.top{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--paper);border-bottom:var(--line)}
+.nav-in{max-width:640px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;padding:10px 12px;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav-in a{flex:0 0 auto;text-decoration:none;border:var(--line);border-radius:999px;padding:2px 14px;font-size:15px;background:var(--paper);transition:background .2s}
+.nav-in a.on{background:var(--yellow)}
+
+section{padding-top:26px;scroll-margin-top:62px}
+h2.sec{display:inline-block;font-size:20px;border:var(--line);border-radius:999px;padding:2px 18px;margin-bottom:14px;box-shadow:0 4px 0 var(--ink)}
+.c-coral{background:var(--coral)}.c-yellow{background:var(--yellow)}.c-blue{background:var(--blue)}.c-green{background:var(--green)}
+
+.card{background:var(--paper);border:var(--line);border-radius:26px;padding:16px;box-shadow:0 5px 0 var(--ink);margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:6px}
+.muted{font-size:13px;opacity:.75}
+
+/* ---------- hero ---------- */
+.hero{padding-top:16px}
+.hero-art{border:var(--line);border-radius:30px;overflow:hidden;box-shadow:0 5px 0 var(--ink);background:var(--blue)}
+.hero-art svg{display:block;width:100%;height:auto}
+.hero h1{font-size:28px;line-height:1.3;margin:18px 0 4px;text-align:center}
+.hero .sub{text-align:center;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0 16px}
+.chip{border:var(--line);border-radius:999px;padding:0 14px;font-size:14px}
+.cd-label{text-align:center;font-size:16px;margin-bottom:8px}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.cd div{border:var(--line);border-radius:20px;text-align:center;padding:8px 2px 6px;box-shadow:0 4px 0 var(--ink)}
+.cd b{display:block;font-size:30px;line-height:1.1}
+.cd span{font-size:12px}
+.cd div:nth-child(1){background:var(--coral)}.cd div:nth-child(2){background:var(--yellow)}
+.cd div:nth-child(3){background:var(--blue)}.cd div:nth-child(4){background:var(--green)}
+.cd-msg{display:none;text-align:center;font-size:20px;border:var(--line);border-radius:22px;padding:12px;background:var(--yellow);box-shadow:0 4px 0 var(--ink)}
+
+/* ---------- flights ---------- */
+.flight .head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.flight .tagline{border:var(--line);border-radius:999px;padding:0 12px;font-size:13px}
+.route{display:grid;grid-template-columns:1fr 70px 1fr;align-items:center;gap:4px;text-align:center}
+.route .code{font-size:32px;line-height:1.1}
+.route .tm{font-size:22px}
+.route .ap{font-size:12px;opacity:.8}
+.route .mid svg{width:100%;height:28px;display:block}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;font-size:13px}
+.fgrid div{border:var(--line);border-radius:14px;padding:4px 10px}
+.fgrid small{display:block;font-size:11px;opacity:.7}
+
+/* ---------- day tabs ---------- */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 4px 14px;margin:0 -4px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;min-width:64px;font:inherit;color:inherit;cursor:pointer;background:var(--paper);border:var(--line);border-radius:20px;padding:6px 8px;text-align:center;transition:background .2s}
+.tab small{display:block;font-size:11px;line-height:1.2}
+.tab b{display:block;font-size:17px;line-height:1.3}
+.tab[aria-selected="true"]{background:var(--coral);box-shadow:0 4px 0 var(--ink);translate:0 -2px}
+.tab.pop{animation:pop .55s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{0%{scale:.78}60%{scale:1.16}100%{scale:1}}
+
+.dayhead{display:grid;grid-template-columns:112px 1fr;gap:12px;align-items:center}
+.dayart{border:var(--line);border-radius:20px;overflow:hidden}
+.dayart svg{display:block;width:100%;height:auto}
+.dayhead .dn{font-size:13px;border:var(--line);border-radius:999px;display:inline-block;padding:0 12px;background:var(--yellow)}
+.dayhead h3{font-size:18px;line-height:1.35;margin-top:4px}
+
+.tips{margin-bottom:16px}
+.tips ol{list-style:none;font-size:14px}
+.tips li{padding-left:24px;position:relative;margin:4px 0}
+.tips li i{position:absolute;left:0;top:2px;width:18px;height:18px;border:var(--line);border-radius:50%;background:var(--green);font-style:normal;font-size:11px;line-height:12px;text-align:center}
+
+ol.timeline{list-style:none;margin-top:6px}
+.tl-item{display:grid;grid-template-columns:48px 20px 1fr;gap:6px;margin-bottom:14px}
+.tl-time{text-align:right;font-size:15px;line-height:1.2;padding-top:12px}
+.tl-time small{display:block;font-size:11px;opacity:.7;margin-top:2px}
+.tl-rail{position:relative}
+.tl-rail::before{content:"";position:absolute;left:50%;top:0;bottom:-14px;width:3px;margin-left:-1.5px;background:var(--ink)}
+.tl-item:last-child .tl-rail::before{bottom:50%}
+.tl-rail i{position:absolute;top:14px;left:50%;width:16px;height:16px;margin-left:-8px;border:var(--line);border-radius:50%;background:var(--dot,var(--yellow))}
+.tl-card{position:relative;border:var(--line);border-radius:22px;padding:12px 14px;background:var(--paper)}
+.tl-card h4{font-size:17px;line-height:1.4;margin:2px 0}
+.tl-card .place{font-size:13px;opacity:.75}
+.pop-in{animation:popin .55s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes popin{0%{opacity:0;translate:0 18px;scale:.9}100%{opacity:1;translate:0 0;scale:1}}
+
+.tag{display:inline-block;font-size:12px;border:2.5px solid var(--ink);border-radius:999px;padding:0 9px;margin:0 4px 4px 0;line-height:1.55}
+.t-flight{background:var(--blue)}.t-air{background:var(--blue)}
+.t-drive{background:var(--green)}
+.t-food{background:var(--coral)}
+.t-spot{background:var(--yellow)}.t-fam{background:var(--yellow)}
+.t-shop{background:var(--yellow);border-style:dashed}
+.t-stay{background:var(--blue);border-style:dashed}
+.must{position:absolute;top:-12px;right:12px;rotate:4deg;background:var(--coral);border:var(--line);border-radius:999px;padding:0 12px;font-size:13px;box-shadow:0 3px 0 var(--ink)}
+
+.notes{list-style:none;margin-top:6px;font-size:14px}
+.notes li{position:relative;padding-left:16px;margin:2px 0}
+.notes li::before{content:"•";position:absolute;left:4px}
+.notes li.tip,.notes li.warn{padding:4px 10px;margin:6px 0;border:2.5px solid var(--ink);border-radius:14px}
+.notes li.tip{background:var(--yellow)}.notes li.warn{background:var(--coral)}
+.notes li.tip::before,.notes li.warn::before{content:none}
+.mapbtn{display:inline-block;margin-top:8px;font-size:13px;text-decoration:none;border:2.5px solid var(--ink);border-radius:999px;padding:0 12px;background:var(--blue)}
+
+/* ---------- checklists ---------- */
+.bar{height:16px;border:var(--line);border-radius:999px;overflow:hidden;margin:4px 0 10px}
+.bar i{display:block;height:100%;width:0;background:var(--green);transition:width .4s}
+.progress{display:flex;justify-content:space-between;font-size:13px}
+.ck{display:flex;gap:12px;align-items:flex-start;padding:9px 2px;border-bottom:2px dashed rgba(62,58,57,.35);cursor:pointer}
+.ck:last-child{border-bottom:0}
+.ck input{position:absolute;opacity:0;pointer-events:none}
+.ck .box{flex:0 0 26px;height:26px;border:var(--line);border-radius:9px;background:var(--paper);display:grid;place-items:center;margin-top:1px;font-size:16px;line-height:1;color:transparent}
+.ck input:checked + .box{background:var(--green);color:var(--ink);animation:pop .45s cubic-bezier(.34,1.56,.64,1)}
+.ck input:focus-visible + .box{outline:3px solid var(--blue);outline-offset:2px}
+.ck .tx{font-size:15px;line-height:1.5}
+.ck .tx small{display:block;font-size:12px;opacity:.7}
+.ck input:checked ~ .tx{text-decoration:line-through;opacity:.55}
+.grp{font-size:14px;display:inline-block;border:var(--line);border-radius:999px;padding:0 12px;margin:6px 0 2px}
+
+/* ---------- lodging ---------- */
+.stay .top{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:6px}
+.stay .nights{font-size:13px;border:var(--line);border-radius:999px;padding:0 12px;background:var(--yellow)}
+.paid{font-size:13px;border:var(--line);border-radius:999px;padding:0 12px;background:var(--green)}
+.stay .addr{font-size:14px;opacity:.85}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.btns a{font-size:13px;text-decoration:none;border:2.5px solid var(--ink);border-radius:999px;padding:0 14px;background:var(--blue)}
+.btns a.alt{background:var(--yellow)}
+.kv{display:grid;grid-template-columns:78px 1fr;gap:4px 10px;font-size:14px;margin-top:6px}
+.kv dt{opacity:.7}
+.sos{list-style:none}
+.sos li{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-bottom:2px dashed rgba(62,58,57,.35);font-size:14px}
+.sos li:last-child{border-bottom:0}
+.sos small{display:block;font-size:12px;opacity:.7}
+.sos a{flex:0 0 auto;text-decoration:none;border:2.5px solid var(--ink);border-radius:999px;padding:0 12px;background:var(--coral);font-size:13px}
+
+footer{text-align:center;font-size:13px;padding:24px 16px 0;opacity:.8}
+
+/* ---------- idle SVG motion ---------- */
+.fl{transform-box:fill-box;transform-origin:center}
+.cloud-a{animation:drift 10s ease-in-out infinite alternate}
+.cloud-b{animation:drift 13s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translateX(22px)}}
+.plane{animation:fly 9s ease-in-out infinite alternate}
+@keyframes fly{to{transform:translate(34px,-7px)}}
+.sun{animation:pulse 5s ease-in-out infinite alternate}
+@keyframes pulse{to{transform:scale(1.07)}}
+.drive{animation:drive 20s linear infinite}
+@keyframes drive{from{transform:translateX(-90px)}to{transform:translateX(380px)}}
+.bobcar{animation:bob 1s ease-in-out infinite alternate}
+@keyframes bob{to{transform:translateY(-1.5px)}}
+.leaf{animation:fall 9s linear infinite}
+@keyframes fall{0%{transform:translate(0,-20px) rotate(0);opacity:0}10%{opacity:1}50%{transform:translate(18px,100px) rotate(180deg)}90%{opacity:1}100%{transform:translate(-8px,215px) rotate(360deg);opacity:0}}
+.steam path{animation:steam 3s ease-in-out infinite}
+.steam path:nth-child(2){animation-delay:-1s}.steam path:nth-child(3){animation-delay:-2s}
+@keyframes steam{0%{transform:translateY(4px);opacity:.15}50%{opacity:.7}100%{transform:translateY(-8px);opacity:.15}}
+.wave{animation:wave 4s ease-in-out infinite alternate}
+@keyframes wave{to{transform:translateX(10px)}}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 5s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-1.5deg)}to{transform:rotate(1.5deg)}}
+.dbob{animation:dbob 3s ease-in-out infinite alternate}
+@keyframes dbob{to{transform:translateY(-3px)}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+@media (min-width:700px){
+  body{font-size:17px}
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="章節選單">
+  <div class="nav-in" id="nav">
+    <a href="#home" class="on">🏠 首頁</a>
+    <a href="#flights">✈️ 航班</a>
+    <a href="#itinerary">🗓️ 行程</a>
+    <a href="#todo">✅ 待辦</a>
+    <a href="#stay">🛏️ 住宿</a>
+    <a href="#before">📋 出發前</a>
+    <a href="#packing">🧳 行李</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ============ HOME ============ -->
+<section id="home" class="hero">
+  <div class="hero-art">
+    <svg viewBox="0 0 360 250" role="img" aria-label="手繪插圖：飛機飛過由布岳與金鱗湖水上鳥居，銀杏與楓葉飄落，一台休旅車行駛在路上">
+      <rect width="360" height="250" fill="#A8D3E6"/>
+      <g transform="translate(290,56)"><circle class="sun fl" r="24" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/></g>
+
+      <g transform="translate(14,22)"><g class="cloud-a">
+        <path d="M14 38 C2 38 0 22 14 20 C14 6 32 2 40 12 C46 0 66 0 70 14 C84 12 90 30 78 38 Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></g></g>
+      <g transform="translate(210,92) scale(.75)"><g class="cloud-b">
+        <path d="M14 38 C2 38 0 22 14 20 C14 6 32 2 40 12 C46 0 66 0 70 14 C84 12 90 30 78 38 Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></g></g>
+
+      <!-- 由布岳 -->
+      <path d="M-10 182 L58 84 Q66 74 74 84 L90 106 L118 66 Q126 56 134 66 L240 182 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M150 182 Q230 112 372 168 L372 196 L150 196 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+
+      <!-- 金鱗湖 -->
+      <rect x="-5" y="178" width="370" height="30" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
+      <g stroke="#FFFCF6" stroke-width="3" fill="none" stroke-linecap="round">
+        <path class="wave" d="M30 190 q8 -6 16 0 t16 0"/>
+        <path class="wave" d="M180 197 q8 -6 16 0 t16 0" style="animation-delay:-2s"/>
+        <path class="wave" d="M258 188 q8 -6 16 0 t16 0" style="animation-delay:-1s"/>
+      </g>
+
+      <!-- 水上鳥居 -->
+      <g transform="translate(106,152)" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round" fill="#F2A497">
+        <rect x="6" y="18" width="7" height="38"/><rect x="38" y="18" width="7" height="38"/>
+        <path d="M0 10 Q25.5 4 51 10 L49 18 L2 18 Z"/>
+        <rect x="8" y="28" width="35" height="5"/>
+      </g>
+
+      <!-- 銀杏 -->
+      <g transform="translate(0,0)"><g class="sway">
+        <rect x="316" y="152" width="9" height="56" fill="#3E3A39"/>
+        <path d="M296 150 C288 130 306 106 322 112 C340 104 358 126 346 148 C340 160 304 162 296 150Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+      </g></g>
+
+      <!-- 地面與道路 -->
+      <rect x="-5" y="206" width="370" height="50" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
+      <rect x="-5" y="222" width="370" height="26" fill="#3E3A39"/>
+      <line x1="0" y1="235" x2="360" y2="235" stroke="#FFFCF6" stroke-width="3" stroke-dasharray="12 10"/>
+
+      <!-- 湯 牌 -->
+      <g transform="translate(40,164)">
+        <rect x="16" y="20" width="5" height="26" fill="#3E3A39"/>
+        <rect x="2" y="0" width="34" height="22" rx="6" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+        <text x="19" y="17" text-anchor="middle" font-size="15" fill="#3E3A39" font-family="Huninn,sans-serif">湯</text>
+        <g class="steam" stroke="#3E3A39" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".6">
+          <path d="M8 -4 q-5 -6 0 -12 t0 -12"/><path d="M19 -4 q-5 -6 0 -12 t0 -12"/><path d="M30 -4 q-5 -6 0 -12 t0 -12"/>
+        </g>
+      </g>
+
+      <!-- 休旅車 -->
+      <g transform="translate(0,196)"><g class="drive"><g class="bobcar">
+        <path d="M0 24 L4 12 Q6 6 12 6 L46 6 Q54 6 58 14 L66 20 Q70 22 70 28 L70 32 L0 32 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M10 12 L22 12 L22 20 L8 20 Z M27 12 L40 12 L40 20 L27 20 Z M45 12 L50 12 L58 20 L45 20 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+        <circle cx="16" cy="33" r="7" fill="#3E3A39"/><circle cx="16" cy="33" r="2.5" fill="#FFFCF6"/>
+        <circle cx="54" cy="33" r="7" fill="#3E3A39"/><circle cx="54" cy="33" r="2.5" fill="#FFFCF6"/>
+      </g></g></g>
+
+      <!-- 飛機 -->
+      <g transform="translate(40,66)"><g class="plane">
+        <path d="M2 8 L-4 -6 L8 -6 L16 8 Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+        <ellipse cx="32" cy="12" rx="32" ry="8" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+        <path d="M30 12 L20 30 L32 30 L46 12 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+        <circle cx="40" cy="11" r="2" fill="#3E3A39"/><circle cx="48" cy="11" r="2" fill="#3E3A39"/><circle cx="32" cy="11" r="2" fill="#3E3A39"/>
+      </g></g>
+
+      <!-- 楓葉 -->
+      <g id="leaves"></g>
+    </svg>
+  </div>
+
+  <h1>福岡・由布院<br>親子自駕慢遊</h1>
+  <p class="sub">溫泉 Villa × 野生動物園 × 水族館 × 楓紅銀杏</p>
+  <div class="chips">
+    <span class="chip" style="background:var(--yellow)">11/24 – 11/29</span>
+    <span class="chip" style="background:var(--green)">六天五夜</span>
+    <span class="chip" style="background:var(--coral)">4大2小</span>
+    <span class="chip" style="background:var(--blue)">自駕</span>
+  </div>
+
+  <div class="cd-label" id="cdLabel">距離出發還有</div>
+  <div class="cd" id="cd">
+    <div><b id="cdD">0</b><span>天</span></div>
+    <div><b id="cdH">0</b><span>小時</span></div>
+    <div><b id="cdM">0</b><span>分</span></div>
+    <div><b id="cdS">0</b><span>秒</span></div>
+  </div>
+  <div class="cd-msg" id="cdMsg"></div>
+</section>
+
+<!-- ============ FLIGHTS ============ -->
+<section id="flights">
+  <h2 class="sec c-blue">✈️ 航班</h2>
+
+  <article class="card flight">
+    <div class="head"><span>去程　11/24 (二)</span><span class="tagline" style="background:var(--yellow)">CI 110 · 直飛</span></div>
+    <div class="route">
+      <div><div class="code">TPE</div><div class="tm">06:50</div><div class="ap">桃園機場 第2航廈</div></div>
+      <div class="mid"><svg viewBox="0 0 70 28" aria-hidden="true"><path d="M2 20 Q35 -6 68 20" fill="none" stroke="#3E3A39" stroke-width="3" stroke-dasharray="5 5" stroke-linecap="round"/><g transform="translate(26,2)"><ellipse cx="9" cy="8" rx="9" ry="4" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/><path d="M8 8 L4 16 L10 16 L14 8Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2" stroke-linejoin="round"/></g></svg></div>
+      <div><div class="code">FUK</div><div class="tm">10:00</div><div class="ap">福岡機場 第1航廈</div></div>
+    </div>
+    <div class="fgrid">
+      <div><small>航空公司</small>中華航空 China Airlines</div>
+      <div><small>航班編號</small>CI 110</div>
+      <div><small>機型</small>Airbus A330-300</div>
+      <div><small>飛行時間</small>2 小時 10 分</div>
+      <div style="grid-column:1/-1"><small>抵達後</small>入境審查 → 領行李 → 國際線航廈 1F 租車櫃檯報到</div>
+    </div>
+  </article>
+
+  <article class="card flight">
+    <div class="head"><span>回程　11/29 (日)</span><span class="tagline" style="background:var(--coral)">CI 111 · 直飛</span></div>
+    <div class="route">
+      <div><div class="code">FUK</div><div class="tm">11:00</div><div class="ap">福岡機場 第1航廈</div></div>
+      <div class="mid"><svg viewBox="0 0 70 28" aria-hidden="true"><path d="M2 20 Q35 -6 68 20" fill="none" stroke="#3E3A39" stroke-width="3" stroke-dasharray="5 5" stroke-linecap="round"/><g transform="translate(26,2)"><ellipse cx="9" cy="8" rx="9" ry="4" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5"/><path d="M8 8 L4 16 L10 16 L14 8Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2" stroke-linejoin="round"/></g></svg></div>
+      <div><div class="code">TPE</div><div class="tm">12:35</div><div class="ap">桃園機場 第2航廈</div></div>
+    </div>
+    <div class="fgrid">
+      <div><small>航空公司</small>中華航空 China Airlines</div>
+      <div><small>航班編號</small>CI 111</div>
+      <div><small>機型</small>Airbus A330-300</div>
+      <div><small>飛行時間</small>2 小時 35 分</div>
+      <div style="grid-column:1/-1"><small>報到時間</small>08:00 起辦理</div>
+      <div style="grid-column:1/-1"><small>提醒</small>07:30 退房還車 → 租車店免費接駁至國際線航廈 → 托運、安檢、退稅</div>
+    </div>
+  </article>
+  <p class="muted" style="margin-top:-6px">時間皆為當地時間（日本比台灣快 1 小時）。</p>
+</section>
+
+<!-- ============ ITINERARY ============ -->
+<section id="itinerary">
+  <h2 class="sec c-coral">🗓️ 每日行程</h2>
+
+  <div class="card tips">
+    <h3>👶 親子自駕三提醒</h3>
+    <ol>
+      <li><i>1</i>景點都選附設或最近的收費停車場，免爬坡、免長途步行。</li>
+      <li><i>2</i>11 月九州約 17:00 日落、氣溫驟降，白天戶外、傍晚逛室內與採買。</li>
+      <li><i>3</i>幼童午睡排在每天中長途車程裡，維持體力與作息。</li>
+    </ol>
+  </div>
+
+  <div class="tabs" id="tabs" role="tablist" aria-label="選擇日期"></div>
+  <div id="dayView"></div>
+</section>
+
+<!-- ============ TODO ============ -->
+<section id="todo">
+  <h2 class="sec c-yellow">✅ 旅途待辦</h2>
+  <div class="card">
+    <div class="progress"><span id="p-todo-t">已完成 0 / 0</span><span id="p-todo-p">0%</span></div>
+    <div class="bar"><i id="p-todo-b"></i></div>
+    <div id="list-todo"></div>
+  </div>
+</section>
+
+<!-- ============ STAY ============ -->
+<section id="stay">
+  <h2 class="sec c-green">🛏️ 住宿・租車</h2>
+
+  <article class="card stay">
+    <div class="top"><span class="nights">11/24 – 11/26 · 2 晚</span><span class="paid">已付款</span></div>
+    <h3>AMBER YUFUIN（STAY YUFUIN）</h3>
+    <p class="addr">大分縣由布市湯布院町川上</p>
+    <ul class="notes">
+      <li>包棟溫泉 Villa，4 大 2 小專屬獨棟，自帶室內外私人天然溫泉風呂</li>
+      <li>專屬免費停車位</li>
+      <li>全套廚房與餐具、微波爐、大型冰箱（Day 2 晚上自煮和牛火鍋）</li>
+    </ul>
+    <div class="btns">
+      <a href="https://maps.app.goo.gl/T3CPPgR33mfTpH2b9" target="_blank" rel="noopener">📍 Google Maps</a>
+      <a class="alt" href="https://www.booking.com/hotel/jp/amber-yufuin.zh-tw.html" target="_blank" rel="noopener">Booking 訂房</a>
+    </div>
+  </article>
+
+  <article class="card stay">
+    <div class="top"><span class="nights">11/26 – 11/29 · 3 晚</span><span class="paid">已付款</span></div>
+    <h3>西日本鉄道 福浜アパート 200</h3>
+    <p class="addr">福岡市中央區福濱 2-20-4（PayPay Dome 旁）</p>
+    <ul class="notes">
+      <li>公寓型住宿，近百道海濱、福岡 PayPay 巨蛋與 MARK IS 福岡 momochi</li>
+      <li>客廳寬敞，適合幼童玩耍與自煮、吃超市熟食</li>
+    </ul>
+    <div class="btns">
+      <a href="https://maps.app.goo.gl/fiWdA4jD4Syyq6KN6" target="_blank" rel="noopener">📍 Google Maps</a>
+      <a class="alt" href="https://www.booking.com/Share-p3sVNv" target="_blank" rel="noopener">Booking 訂房</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>🚗 租車：AVIS Budget 福岡機場國際線店</h3>
+    <dl class="kv">
+      <dt>租期</dt><dd>11/24 10:30 – 11/29 08:00（6 天）</dd>
+      <dt>車型</dt><dd>7–8 人座 MPV（Alphard / Voxy），2 張幼童汽座、繁中 GPS</dd>
+      <dt>地址</dt><dd>福岡市博多區榎田 2 丁目 7</dd>
+      <dt>電話</dt><dd><a href="tel:+81927105922">092-710-5922</a></dd>
+      <dt>取車</dt><dd>國際線航廈 1F 租車櫃檯報到，若櫃檯無人請來電，專車接送至店舖</dd>
+      <dt>高速</dt><dd>租 ETC 卡並加購 KEP 九州高速公路 PASS</dd>
+      <dt>還車</dt><dd>11/29 07:30 出發，先到附近加油站加滿 Regular（レギュラー）並留收據</dd>
+    </dl>
+    <ul class="notes"><li class="warn">⚠ 日本靠左行駛，注意轉彎與行車距離</li></ul>
+    <div class="btns"><a href="https://www.google.com/maps/search/?api=1&query=AVIS%20%E7%A6%8F%E5%B2%A1%E7%A9%BA%E6%B8%AF%E5%9B%BD%E9%9A%9B%E7%B7%9A%E5%BA%97" target="_blank" rel="noopener">📍 Google Maps</a></div>
+  </article>
+
+  <article class="card">
+    <h3>🆘 緊急聯絡</h3>
+    <ul class="sos">
+      <li><span>日本警察<small>全日本適用，24 小時</small></span><a href="tel:110">110</a></li>
+      <li><span>日本救護車・消防<small>全日本適用，24 小時</small></span><a href="tel:119">119</a></li>
+      <li><span>台北駐福岡經濟文化辦事處<small>平日 09:00–18:00 · 福岡市中央區櫻坂 3-12-42</small></span><a href="tel:+81927342810">+81 92-734-2810</a></li>
+      <li><span>駐福岡辦事處 急難專線<small>護照遺失、重大急難，24 小時</small></span><a href="tel:+818087653410">+81 90-8765-3410</a></li>
+      <li><span>日本觀光廳外國人熱線<small>24 小時，提供繁體中文醫療諮詢</small></span><a href="tel:+815038162720">050-3816-2720</a></li>
+    </ul>
+  </article>
+</section>
+
+<!-- ============ BEFORE ============ -->
+<section id="before">
+  <h2 class="sec c-blue">📋 出發前清單</h2>
+  <div class="card">
+    <div class="progress"><span id="p-before-t">已完成 0 / 0</span><span id="p-before-p">0%</span></div>
+    <div class="bar"><i id="p-before-b"></i></div>
+    <div id="list-before"></div>
+  </div>
+</section>
+
+<!-- ============ PACKING ============ -->
+<section id="packing">
+  <h2 class="sec c-coral">🧳 行李清單</h2>
+  <div class="card">
+    <div class="progress"><span id="p-pack-t">已完成 0 / 0</span><span id="p-pack-p">0%</span></div>
+    <div class="bar"><i id="p-pack-b"></i></div>
+    <div id="list-pack"></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  祝 4大2小 旅途平安愉快，留下滿滿溫馨回憶 🍁
+</footer>
+
+<script>
+/* =============== 資料 =============== */
+const TAGS={
+  flight:["✈️ 航班","t-flight"], air:["🛃 機場","t-air"], drive:["🚗 自駕","t-drive"],
+  food:["🍴 美食","t-food"], spot:["📸 景點","t-spot"], fam:["🧸 親子","t-fam"],
+  shop:["🛍️ 購物","t-shop"], stay:["🛏️ 住宿","t-stay"]
+};
+const DOT={flight:"var(--blue)",air:"var(--blue)",drive:"var(--green)",food:"var(--coral)",spot:"var(--yellow)",fam:"var(--yellow)",shop:"var(--yellow)",stay:"var(--blue)"};
+
+const DAYS=[
+{d:"11/24",iso:"2026-11-24",w:"二",art:1,title:"啟程出發・福岡取車・由布院溫泉小鎮散策",items:[
+ {s:"06:50",e:"10:00",tags:["flight"],t:"CI 110 桃園出發 → 抵達福岡",p:"桃園機場 (TPE) 第2航廈 → 福岡機場 (FUK) 第1航廈",
+  n:["中華航空 CI 110 直飛，飛行約 2 小時 10 分（A330-300）","抵達後依指標辦理入境審查、領取行李與嬰幼兒隨身物品"],q:"福岡空港 国際線ターミナル"},
+ {s:"10:30",e:"11:30",tags:["drive"],t:"領取租車與安裝汽座",p:"AVIS Budget 福岡機場國際線店（榎田2丁目7）",
+  n:["至國際線航廈 1F 租車櫃檯報到，由專車接送至榎田店舖取車（電話 092-710-5922）","確認已安裝 2 張幼童汽座，並租借 ETC 卡與 KEP 九州高速公路 PASS"],q:"AVIS 福岡空港国際線店 榎田2丁目7"},
+ {s:"11:30",e:"13:00",tags:["drive"],t:"自駕前往由布院溫泉",p:"經福岡都市高速、大分自動車道，約 1.5 小時",
+  n:["★ 車程約 90 分鐘，剛好讓 2 歲與 3 歲小孩在車上午睡","需要換尿布或伸展可停靠山田 SA 休息站"],q:"由布院駅"},
+ {s:"13:00",e:"16:30",tags:["spot","food"],must:true,t:"湯之坪街道散策・精選午茶",p:"車停由布院車站或街道周邊收費停車場",
+  n:["美食：B-speak 蛋糕捲（P-roll）、Milch 半熟起司蛋糕／布丁、鞠智 cucuchi 銅鑼燒、金賞可樂餅、中津吉吾炸雞、Miffy 森林廚房麵包","伴手禮：由布院醬油屋本店（柚子胡椒、蒜味醬油，需託運）、鞠智手作銅鑼燒禮盒","⚠ 街道店家多在 17:00 打烊，建議提早品嚐購買"],q:"湯之坪街道 由布院"},
+ {s:"16:30",e:"17:30",tags:["spot"],must:true,t:"金鱗湖散策與水上鳥居",p:"車停湖畔旁收費停車場",
+  n:["下車即可漫步湖畔，拍晨昏光影與水上鳥居","步行距離極短，幼童輕鬆無負擔"],q:"金鱗湖"},
+ {s:"17:30",e:"18:00",tags:["stay"],t:"AMBER Yufuin Check-in",p:"AMBER Yufuin（STAY YUFUIN）溫泉 Villa",
+  n:["抵達包棟 Villa 辦理入住，放行李並讓小朋友洗手休息"],q:"AMBER Yufuin"},
+ {s:"18:00",e:"19:30",tags:["food"],t:"由布釜飯「心」湯布院站前店",p:"由布釜飯 心 湯布院站前店",
+  n:["招牌豐後牛釜飯、地雞釜飯、鰻魚釜飯，一飯三吃（乾吃、拌漬物、茶泡飯）","⚠ 僅收現金（Cash only），傍晚易客滿，建議 17:00–17:30 提早候位"],q:"由布釜飯 心 湯布院站前店"}
+]},
+{d:"11/25",iso:"2026-11-25",w:"三",art:2,title:"九州自然野生動物園・狹霧台眺望由布岳・Villa 和牛溫泉夜",items:[
+ {s:"08:30",e:"09:15",tags:["drive"],t:"出發前往九州自然動物公園",p:"大分縣宇佐市安心院町南畑 2-1755-1",
+  n:["08:30 準時自 Villa 出發，車程約 35–40 分鐘","上午場需提早抵達現場排隊叢林巴士"],q:"九州自然動物公園 アフリカンサファリ"},
+ {s:"09:15",e:"12:30",tags:["fam"],must:true,t:"九州自然野生動物公園 African Safari",p:"九州自然動物公園",
+  n:["★ 重頭戲：搭乘專屬「叢林巴士（Jungle Bus）」近距離餵食獅子、大象、美洲黑熊、長頸鹿","巴士結束後到「小動物交流區」輕柔撫摸天竺鼠、袋鼠與迷你馬","園區地勢平緩好走，幼童輕鬆省力"],q:"九州自然動物公園 アフリカンサファリ"},
+ {s:"12:30",e:"14:00",tags:["food"],t:"景觀午餐（二選一）",p:"園內 Safari Restaurant 或 櫟之丘（由布市湯布院町川北 893-1）",
+  n:["方案 A（省時省力）：園內 Safari Restaurant，咖哩飯、漢堡排等幼童喜愛餐點","方案 B（景觀美食）：回程半山腰「櫟之丘」，戶外座位眺望由布院盆地，品嚐柴燒窯烤披薩與義大利麵"],q:"櫟の丘 由布院"},
+ {s:"14:00",e:"15:00",tags:["spot"],must:true,t:"狹霧台展望台（由布岳全景）",p:"大分縣道 11 號 別府一之宮線",
+  n:["★ 免爬山免走路！車子停在展望台旁，下車 1 分鐘即可俯瞰由布院盆地與壯麗由布岳","秋風涼爽，視野絕佳的拍照點"],q:"狭霧台"},
+ {s:"15:00",e:"16:30",tags:["shop"],t:"由布院大型超市採購食材",p:"MaxValu 由布院店 / A-Coop 由布院店",
+  n:["採買晚上 Villa 自煮的豐後牛火鍋／燒烤肉片、當地蔬菜、鮮奶、水果（秋季蜜柑、草莓）與熟食點心","讓小朋友一起挑選喜愛的零食"],q:"マックスバリュ 由布院店"},
+ {s:"16:30",e:"20:30",tags:["food","stay"],t:"Villa 自煮豐後和牛火鍋 & 私人溫泉",p:"AMBER Yufuin（STAY YUFUIN）",
+  n:["在包棟 Villa 自煮豐後和牛大餐，空間寬敞，小孩吃飽後可自由玩耍畫畫","餐後享受室內外天然私人溫泉風呂"],q:"AMBER Yufuin"},
+ {s:"20:30",e:"",tags:["stay"],t:"泡湯就寢",p:"AMBER Yufuin（STAY YUFUIN）",
+  n:["享受由布院靜謐山林星空，早點就寢，為明日自駕賞楓儲備體力"]}
+]},
+{d:"11/26",iso:"2026-11-26",w:"四",art:3,title:"秋月城跡賞楓・太宰府美食・竈門神社・入住福岡公寓",items:[
+ {s:"09:00",e:"10:15",tags:["drive"],t:"退房出發前往秋月城跡",p:"朝倉市秋月野鳥，車程約 1 小時 15 分",
+  n:["09:00 退房，沿大分自動車道往朝倉市行駛","小孩在車上看風景或小憩"],q:"秋月城跡 黒門"},
+ {s:"10:15",e:"12:00",tags:["spot"],must:true,t:"秋月城跡（黑門與杉之馬場通）",p:"車停黑門周邊收費停車場",
+  n:["九州紅葉第一名所「筑前小京都」，黑門與石階兩側古楓如火","★ 車子直接停在黑門旁停車場，下車即可拍照賞楓，省去長距離健行坡道"],q:"秋月城跡 黒門"},
+ {s:"12:00",e:"12:50",tags:["drive"],t:"自駕前往太宰府天滿宮區域",p:"太宰府市宰府（車停周邊收費停車場）",
+  n:["車程約 45 分鐘，幼童可在車上午睡休息"],q:"太宰府天満宮"},
+ {s:"12:50",e:"14:15",tags:["food"],t:"特色午餐：和牛明太子神樂",p:"和牛明太子神樂（太宰府天滿宮參道）",
+  n:["黑毛和牛箱飯搭配福岡名產明太子（建議提前預約）","排隊備案：笠乃家（親子丼與烏龍麵）、一蘭太宰府參道店（合格五角碗拉麵）"],q:"和牛明太子神楽 太宰府"},
+ {s:"14:15",e:"15:30",tags:["spot","food"],must:true,t:"太宰府參道散策與特色小吃",p:"太宰府天滿宮參道、太宰府遊園地旁",
+  n:["必吃：現烤梅枝餅（かさの家／やす武，外酥內糯）、天山（甘王草莓大福最中）、YAMAYA BASE DAZAIFU（明太子法國麵包）、小鳥居茶坊（生蕨餅）","伴手禮：太宰府參道限定「一蘭合格拉麵」（五角形合格碗外盒，常溫可帶回台）、盒裝梅枝餅","天滿宮旁的懷舊小樂園「太宰府遊園地」可讓小孩放電"],q:"太宰府天満宮 参道"},
+ {s:"15:30",e:"16:45",tags:["spot"],must:true,t:"寶滿宮 竈門神社（紅葉隧道）",p:"福岡縣太宰府市內山 473",
+  n:["著名結緣神社，秋季參道被楓紅覆蓋成天然紅葉隧道","社務所由建築師片山正通設計，必買精緻手繩編織御守（むすび糸）與紅葉御守","★ 車停神社專屬停車場，步行短距離即可抵達"],q:"宝満宮 竈門神社"},
+ {s:"16:45",e:"17:30",tags:["stay","drive"],t:"前往福岡市區公寓 Check-in",p:"西日本鉄道 福浜アパート200（福岡市中央區福濱 2-20-4）",
+  n:["抵達福岡基地公寓辦理入住，放行李並稍作休整"],q:"福浜アパート200 福岡市中央区福浜2-20-4"},
+ {s:"18:00",e:"20:30",tags:["food","shop"],t:"晚餐與採買：MARK IS 福岡 momochi",p:"福岡市中央區地行濱 2-2-1",
+  n:["晚餐：博多牛腸鍋（前田屋／大山）或 3F 美食街的多樣幼童餐點","購物：室內走道寬敞平坦，Uniqlo 感謝祭最後一天、3COINS、1F 西松屋（日本平價童裝、零食與日常補給）"],q:"MARK IS 福岡ももち"},
+ {s:"20:30",e:"",tags:["stay"],t:"公寓休息",p:"西日本鉄道 福浜アパート200",
+  n:["整理戰利品、洗衣休息，準備明日水族館行程"]}
+]},
+{d:"11/27",iso:"2026-11-27",w:"五",art:4,title:"海洋世界海之中道・海濱公園・福濱公寓溫馨晚餐・努努雞宵夜",items:[
+ {s:"09:00",e:"09:30",tags:["drive"],t:"自駕前往海之中道",p:"海洋世界海之中道（福岡市東區大字西戶崎 18-28）",
+  n:["約 30 分鐘抵達，水族館附設超大平面停車場","停好車直接步入館內，動線平坦順暢"],q:"マリンワールド海の中道"},
+ {s:"09:30",e:"13:00",tags:["fam"],must:true,t:"海洋世界海之中道 水族館",p:"海洋世界海之中道",
+  n:["精選表演時刻（建議依當日公告入席）：","★ 10:40　GO GO Seal 海豹表演（海獸島島嶼舞台）","★ 11:00　主秀 海豚與海獅表演（2F 看台，背靠博多灣海景）","★ 11:45　大型開放式海洋坦克表演（沙丁魚風暴餵食秀）","★ 12:20　企鵝歸來（海獸島島嶼舞台）","★ 12:40　島嶼對話（海獸島海豚館）","★ 14:30　江豚講座（1F 江豚池）"],q:"マリンワールド海の中道"},
+ {s:"13:00",e:"14:15",tags:["food"],t:"水族館景觀午餐",p:"海洋世界海之中道 1F Restaurant Reilly",
+  n:["隔著巨大玻璃窗看海豚優游，一邊享用午餐","兒童咖哩蛋包飯、漢堡排與牛排飯，氣氛悠閒療癒"],q:"マリンワールド海の中道 レストラン"},
+ {s:"14:15",e:"16:45",tags:["fam"],t:"海之中道海濱公園：動物之森＆大草坪",p:"福岡市東區大字西戶崎 18-25",
+  n:["動物之森：開放式小型動物園，可近距離看水豚、袋鼠、松鼠猴、紅鶴","大草坪與兒童遊樂區：超大彈跳床（鯨魚雲朵）、幼童溜滑梯，讓 2、3 歲小孩盡情放電"],q:"国営海の中道海浜公園 動物の森"},
+ {s:"16:45",e:"17:45",tags:["drive","shop"],t:"返回市區・順路採買努努雞",p:"大丸福岡天神店 B2／岩田屋 B2／博多車站 Ming 商店街",
+  n:["自海之中道回市區約 35–40 分鐘，幼童在車上小睡","走福岡都市高速下「天神北」或「博多站東」出口，5–10 分鐘即可順路採買","★ 冷吃／微凍吃，絕對不可微波加熱！外皮香脆微甜微辣","⚠ 含肉類炸雞製品嚴禁攜帶入境台灣，務必在日本吃完"],q:"大丸福岡天神店 地下"},
+ {s:"17:45",e:"18:30",tags:["shop"],t:"MARK IS 福岡 momochi：Hello Day 超市",p:"1F Hello Day 超市（附設大型立體停車場）",
+  n:["方案 A（熟食拼盤）：現切生魚片、握壽司拼盤、玉子燒、日式烤串與當季甘王草莓（約 18:30 後常有折扣貼紙）","方案 B（簡易暖胃鍋）：博多華味鳥／茅乃舍高湯包，搭配雞腿肉、大白菜與烏龍麵回公寓煮鍋"],q:"MARK IS 福岡ももち Hello Day"},
+ {s:"18:30",e:"20:00",tags:["food","stay"],t:"福濱公寓溫馨晚餐",p:"西日本鉄道 福浜アパート200",
+  n:["在客廳輕鬆享用超市熟食或自煮暖心鍋物","幼童吃飽後可自由玩耍，免去餐廳排隊與拘束"],q:"福浜アパート200 福岡市中央区福浜2-20-4"},
+ {s:"20:00",e:"",tags:["stay","food"],t:"公寓休息・努努雞宵夜與甘王草莓",p:"西日本鉄道 福浜アパート200",
+  n:["洗個溫水澡，全家在客廳享用冰涼酥脆的努努雞、超市熟食與福岡當季甘王草莓"]}
+]},
+{d:"11/28",iso:"2026-11-28",w:"六",art:5,title:"麵包超人博物館・天神地下街・櫛田神社金黃銀杏・大東園和牛燒肉",items:[
+ {s:"09:40",e:"10:00",tags:["drive"],t:"前往博多中洲商圈",p:"博多 Riverain 購物中心（福岡市博多區下川端町 3-1，車停地下停車場）",
+  n:["車子直接停入博多 Riverain 地下專用停車場，搭電梯直達 5 樓","全程室內，無風無雨無障礙"],q:"博多リバレイン"},
+ {s:"10:00",e:"13:00",tags:["fam"],must:true,t:"福岡麵包超人兒童博物館 in 購物商場",p:"博多 Riverain 5F–6F",
+  n:["全室內明亮安全的平坦空間","現場唱跳見面會、彩虹溜滑梯、大球池、麵包烘焙工坊體驗、周邊限定玩具專賣店"],q:"福岡アンパンマンこどもミュージアム"},
+ {s:"13:00",e:"14:15",tags:["food"],t:"館內主題午餐",p:"博物館內 不二家餐廳／烏龍麵店",
+  n:["兒童烏龍麵：點餐即贈可愛陶瓷碗公，可洗淨帶回家作紀念","不二家 Family Restaurant：造型蛋包飯與兒童餐，附圍兜與餐具"],q:"福岡アンパンマンこどもミュージアム"},
+ {s:"14:15",e:"16:15",tags:["shop"],t:"天神地下街散策與購物",p:"福岡市中央區天神 2 丁目地下",
+  n:["九州最大地下街，歐式石板街道恆溫好走，串聯大丸、岩田屋、三越，推嬰兒車無障礙","伴手禮：茅乃舍（久原本家）高湯包、福砂屋長崎蛋糕、如水庵筑紫麻糬、吉野堂小雞蛋糕、東雲堂二〇加煎餅"],q:"天神地下街"},
+ {s:"16:30",e:"17:30",tags:["spot"],t:"櫛田神社（博多總鎮守・秋季大銀杏）",p:"福岡市博多區上川端町 1-41",
+  n:["參拜博多百年總鎮守，11 月下旬可欣賞百年巨木「櫛田の銀杏」的金黃落葉","常態展示的巨大博多祇園山笠花車也很壯觀","★ 步行 3–5 分鐘即可直達大東園本店"],q:"櫛田神社"},
+ {s:"17:30",e:"19:30",tags:["food"],must:true,t:"大東園 本店（頂級黑毛和牛燒肉）",p:"福岡市博多區上川端町 1-1-1　【已預約 17:30】",
+  n:["福岡老字號頂級黑毛和牛燒肉，油花極美、入口即化","★ 已安排沙發／包廂座，有軟嫩肉品、蒸蛋、牛尾湯泡飯適合幼童"],q:"大東園 本店 博多"},
+ {s:"20:00",e:"",tags:["stay"],t:"返回公寓・行李打包整裝",p:"西日本鉄道 福浜アパート200",
+  n:["整理全部行李箱、戰利品裝箱秤重","確認護照與隨身重要物品，為明日退房還車與返台做好準備"]}
+]},
+{d:"11/29",iso:"2026-11-29",w:"日",art:6,title:"還車・福岡機場免稅店採購・平安返抵國門",items:[
+ {s:"07:30",e:"08:00",tags:["drive"],t:"退房出發前往機場店還車",p:"AVIS Budget 福岡機場國際線店（2 Chome-7 Enokida）",
+  n:["07:30 準時退房，車程約 20 分鐘","還車前先到附近加油站加滿油（保留收據）","由店員檢查車況並結清 ETC 高速公路過路費"],q:"AVIS 福岡空港国際線店 榎田2丁目7"},
+ {s:"08:00",e:"10:30",tags:["air","shop"],t:"接駁至航廈・登機報到・退稅・免稅店",p:"福岡機場 (FUK) 第1航廈（國際線航廈）",
+  n:["搭租車店免費專車前往國際線航廈，08:00 起辦理報到、托運、安檢退稅","★ 福岡空港免稅店可使用台積電折扣券，結帳前記得主動出示","免稅店伴手禮：Amanberry（草莓奶油夾心脆餅，排隊名物）、Menbei（福太郎明太子仙貝）、明月堂（博多通りもん）、福砂屋長崎蛋糕、Royce' 生巧克力（加購保冷袋）、白色戀人","出境免稅店購物提上機最省行李重量"],q:"福岡空港 国際線ターミナル"},
+ {s:"11:00",e:"12:35",tags:["flight"],t:"CI 111 福岡起飛 → 平安返抵桃園",p:"福岡機場 (FUK) 第1航廈 → 桃園機場 (TPE) 第2航廈",
+  n:["中華航空 CI 111 直飛，11:00 起飛，預計 12:35 降落桃園機場第2航廈（飛行約 2 小時 35 分）","提領行李，圓滿結束親子自駕之旅 ✨"],q:"福岡空港 国際線ターミナル"}
+]}
+];
+
+const TODO=[
+ {id:"t1",x:"取車時確認 2 張幼童汽座、ETC 卡、KEP 九州高速 PASS",s:"Day 1 · 11/24"},
+ {id:"t2",x:"湯之坪街道在 17:00 打烊前逛完、買完",s:"Day 1 · 11/24"},
+ {id:"t3",x:"由布釜飯「心」只收現金，提早 17:00–17:30 去候位",s:"Day 1 · 11/24"},
+ {id:"t4",x:"到九州自然動物公園搭叢林巴士餵食動物",s:"Day 2 · 11/25"},
+ {id:"t5",x:"超市採買 Villa 晚餐的豐後牛與蔬果",s:"Day 2 · 11/25"},
+ {id:"t6",x:"預約太宰府「和牛明太子神樂」午餐",s:"Day 3 · 11/26"},
+ {id:"t7",x:"逛 Uniqlo 感謝祭（最後一天）",s:"Day 3 · 11/26"},
+ {id:"t8",x:"竈門神社挑選むすび糸御守與紅葉御守",s:"Day 3 · 11/26"},
+ {id:"t9",x:"依當日公告入席看水族館表演",s:"Day 4 · 11/27"},
+ {id:"t10",x:"買努努雞（冷吃，務必在日本吃完）",s:"Day 4 · 11/27"},
+ {id:"t11",x:"大東園本店 17:30 已預約",s:"Day 5 · 11/28",done:true},
+ {id:"t12",x:"行李秤重、確認護照與隨身重要物品",s:"Day 5 · 11/28"},
+ {id:"t13",x:"還車前加滿油並保留收據",s:"Day 6 · 11/29"},
+ {id:"t14",x:"免稅店結帳前出示台積電折扣券",s:"Day 6 · 11/29"}
+];
+
+const BEFORE=[
+ {id:"b1",x:"確認護照效期",s:"全員（含 2 位幼童）"},
+ {id:"b2",x:"填寫 Visit Japan Web（入境審查與海關）",s:"每人一份，出發前先填好"},
+ {id:"b3",x:"駕照正本＋日文譯本",s:"自駕必備，到監理站辦理譯本"},
+ {id:"b4",x:"確認租車預約：8 人座 MPV、2 張汽座、ETC、KEP、繁中 GPS"},
+ {id:"b5",x:"住宿訂房完成並已付款",s:"AMBER Yufuin／福浜アパート200",done:true},
+ {id:"b6",x:"旅遊平安險",s:"全團已投保",done:true},
+ {id:"b7",x:"預約大東園 11/28 17:30",done:true},
+ {id:"b8",x:"預約和牛明太子神樂（太宰府午餐）"},
+ {id:"b9",x:"辦理 CI 110／CI 111 線上報到"},
+ {id:"b10",x:"準備日幣現金",s:"由布釜飯「心」僅收現金"},
+ {id:"b11",x:"準備上網：eSIM／網卡／Wi-Fi 分享器"},
+ {id:"b12",x:"下載離線地圖，並存好每日導航關鍵字"},
+ {id:"b13",x:"台積電免稅店折扣券存到手機"},
+ {id:"b14",x:"兒童常備藥、退燒藥與保險資料"}
+];
+
+const PACK=[
+ {g:"📄 證件與金錢",items:[
+  {id:"p1",x:"護照（含幼童）"},{id:"p2",x:"駕照正本＋日文譯本"},{id:"p3",x:"信用卡"},{id:"p4",x:"日幣現金（釜飯店只收現金）"},{id:"p5",x:"訂房、租車、預約憑證（截圖＋紙本）"}]},
+ {g:"🧸 幼童用品",items:[
+  {id:"p6",x:"尿布、濕紙巾"},{id:"p7",x:"多備幾套換洗衣物"},{id:"p8",x:"安撫玩具、小毯子"},{id:"p9",x:"兒童餐具、水壺、圍兜"},{id:"p10",x:"車上零食與小繪本（午睡前安撫用）"},{id:"p11",x:"兒童常備藥"},{id:"p12",x:"推車"}]},
+ {g:"🧥 保暖衣物",items:[
+  {id:"p13",x:"外套（11 月傍晚氣溫驟降）"},{id:"p14",x:"圍巾、帽子"},{id:"p15",x:"暖暖包"},{id:"p16",x:"好走的鞋（賞楓、石階）"}]},
+ {g:"🔌 電子用品",items:[
+  {id:"p17",x:"手機、充電線、豆腐頭"},{id:"p18",x:"行動電源"},{id:"p19",x:"網卡／eSIM／分享器"},{id:"p20",x:"車用手機架"}]},
+ {g:"🛍️ 其他",items:[
+  {id:"p21",x:"折疊傘"},{id:"p22",x:"大購物袋、保冷袋（Royce' 生巧克力）"},{id:"p23",x:"行李秤"},{id:"p24",x:"洗衣袋、塑膠袋（髒衣物、溼衣物）"},{id:"p25",x:"洗漱保養用品"}]}
+];
+
+/* =============== 工具 =============== */
+const $=(s,r=document)=>r.querySelector(s);
+const store={
+  get(){try{return JSON.parse(localStorage.getItem("fuk26")||"{}")}catch(e){return {}}},
+  set(o){try{localStorage.setItem("fuk26",JSON.stringify(o))}catch(e){}}
+};
+let state=store.get();
+const mapUrl=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+
+/* =============== 楓葉 =============== */
+(function(){
+  const g=$("#leaves");const xs=[28,92,160,236,300];let h="";
+  xs.forEach((x,i)=>{
+    h+=`<g transform="translate(${x},0)"><g class="leaf fl" style="animation-delay:${-i*1.8}s;animation-duration:${8+i%3*2}s">
+      <path d="M0 -8 L3 -3 L8 -4 L5 1 L8 6 L2 5 L0 10 L-2 5 L-8 6 L-5 1 L-8 -4 L-3 -3Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2" stroke-linejoin="round"/></g></g>`;
+  });
+  g.innerHTML=h;
+})();
+
+/* =============== 倒數 =============== */
+const T0=new Date("2026-11-24T06:50:00+08:00"),TEND=new Date("2026-11-29T12:35:00+08:00");
+const twDate=d=>new Date(d.getTime()+8*3600e3).toISOString().slice(0,10);
+function tick(){
+  const now=new Date();const cd=$("#cd"),msg=$("#cdMsg"),lb=$("#cdLabel");
+  if(now<T0){
+    let s=Math.floor((T0-now)/1000);
+    const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600);s%=3600;const m=Math.floor(s/60);s%=60;
+    $("#cdD").textContent=d;$("#cdH").textContent=h;$("#cdM").textContent=m;$("#cdS").textContent=s;
+    cd.style.display="grid";msg.style.display="none";lb.textContent="距離出發還有";
+  }else if(now<TEND){
+    const idx=DAYS.findIndex(x=>x.iso===twDate(now));
+    cd.style.display="none";msg.style.display="block";lb.textContent="";
+    msg.textContent=idx>=0?`旅途進行中 · 今天是 Day ${idx+1} 🍁`:"旅途進行中 🍁";
+  }else{
+    cd.style.display="none";msg.style.display="block";lb.textContent="";
+    msg.textContent="平安回家，旅途愉快 ✨";
+  }
+}
+tick();setInterval(tick,1000);
+
+/* =============== 每日行程 =============== */
+const ART={
+ 1:`<rect width="120" height="76" fill="#A8D3E6"/><path d="M-4 80 L30 32 L44 46 L66 18 L110 80Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><g class="dbob"><ellipse cx="82" cy="20" rx="20" ry="6" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><path d="M80 20 L72 32 L82 32 L90 20Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/><path d="M66 18 L62 8 L70 8 L74 18Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/></g>`,
+ 2:`<rect width="120" height="76" fill="#F6D27A"/><g class="dbob"><rect x="80" y="14" width="12" height="36" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><ellipse cx="88" cy="12" rx="13" ry="8" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><path d="M82 6 V0 M92 6 V0" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/><circle cx="92" cy="11" r="2" fill="#3E3A39"/><ellipse cx="56" cy="52" rx="30" ry="14" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><g fill="#F2A497" stroke="#3E3A39" stroke-width="2"><circle cx="46" cy="48" r="4"/><circle cx="60" cy="54" r="4"/><circle cx="70" cy="46" r="3.5"/><circle cx="86" cy="30" r="3"/></g><path d="M36 62 V74 M48 64 V74 M66 64 V74 M78 62 V74" stroke="#3E3A39" stroke-width="4" stroke-linecap="round"/></g><rect y="72" width="120" height="4" fill="#B9DAA5"/>`,
+ 3:`<rect width="120" height="76" fill="#B9DAA5"/><g class="dbob"><path d="M36 10 L42 22 L56 20 L50 32 L58 44 L44 42 L36 58 L28 42 L14 44 L22 32 L16 20 L30 22Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></g><g transform="translate(70,24)" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round" fill="#F2A497"><rect x="4" y="12" width="5" height="34"/><rect x="30" y="12" width="5" height="34"/><path d="M-2 6 Q19.5 1 41 6 L39 13 L0 13Z"/><rect x="6" y="22" width="27" height="4"/></g><rect y="70" width="120" height="6" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>`,
+ 4:`<rect width="120" height="76" fill="#A8D3E6"/><g class="dbob"><path d="M12 48 Q38 8 78 26 Q98 34 112 20 Q108 44 88 50 Q52 66 12 48Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="M52 24 Q54 10 64 8 Q62 20 66 28Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><circle cx="28" cy="40" r="2.5" fill="#3E3A39"/></g><path d="M0 64 q10 -8 20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/><path d="M0 72 q10 -8 20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#FFFCF6" stroke-width="3" stroke-linecap="round"/>`,
+ 5:`<rect width="120" height="76" fill="#FFFCF6"/><g class="dbob"><path d="M60 72 V46 M60 46 C28 44 16 22 32 8 C44 18 50 12 60 4 C70 12 76 18 88 8 C104 22 92 44 60 46Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></g><g transform="translate(92,44) rotate(20)"><path d="M0 -6 L2 -2 L6 -3 L4 1 L6 5 L1 4 L0 8 L-1 4 L-6 5 L-4 1 L-6 -3 L-2 -2Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2" stroke-linejoin="round"/></g><rect y="72" width="120" height="4" fill="#B9DAA5"/>`,
+ 6:`<rect width="120" height="76" fill="#F2A497"/><g class="dbob"><ellipse cx="52" cy="22" rx="26" ry="7" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><path d="M50 22 L42 36 L52 36 L62 22Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/><path d="M30 20 L26 10 L34 10 L38 20Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/></g><rect x="62" y="44" width="40" height="26" rx="4" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/><path d="M82 44 V70 M62 56 H102" stroke="#3E3A39" stroke-width="3"/><path d="M82 44 q-8 -12 -14 -4 q4 6 14 4 q8 -12 14 -4 q-4 6 -14 4" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>`
+};
+
+let cur=0,first=true;
+function renderTabs(){
+  $("#tabs").innerHTML=DAYS.map((x,i)=>`<button class="tab" role="tab" aria-selected="${i===cur}" data-i="${i}"><small>Day ${i+1}</small><b>${x.d}</b><small>週${x.w}</small></button>`).join("");
+}
+function renderDay(animate){
+  const D=DAYS[cur];
+  const items=D.items.map((it,i)=>{
+    const tags=it.tags.map(t=>`<span class="tag ${TAGS[t][1]}">${TAGS[t][0]}</span>`).join("");
+    const notes=(it.n||[]).map(n=>{
+      if(n.startsWith("★"))return `<li class="tip">${n}</li>`;
+      if(n.startsWith("⚠"))return `<li class="warn">${n}</li>`;
+      return `<li>${n}</li>`;
+    }).join("");
+    const time=it.e?`${it.s}<small>${it.e}</small>`:`${it.s}<small>～</small>`;
+    const map=it.q?`<a class="mapbtn" href="${mapUrl(it.q)}" target="_blank" rel="noopener">📍 導航</a>`:"";
+    return `<li class="tl-item ${animate?"pop-in":""}" style="animation-delay:${Math.min(i*60,420)}ms">
+      <div class="tl-time">${time}</div>
+      <div class="tl-rail"><i style="--dot:${DOT[it.tags[0]]}"></i></div>
+      <div class="tl-card">${it.must?`<span class="must">★ 必去</span>`:""}
+        <div>${tags}</div><h4>${it.t}</h4><div class="place">${it.p}</div>
+        ${notes?`<ul class="notes">${notes}</ul>`:""}${map}</div></li>`;
+  }).join("");
+  $("#dayView").innerHTML=`
+    <div class="card dayhead ${animate?"pop-in":""}">
+      <div class="dayart"><svg viewBox="0 0 120 76" role="img" aria-label="Day ${cur+1} 插圖">${ART[D.art]}</svg></div>
+      <div><span class="dn">Day ${cur+1} · ${D.d} (${D.w})</span><h3>${D.title}</h3></div>
+    </div>
+    <ol class="timeline">${items}</ol>`;
+}
+function selectDay(i,animate=true){
+  cur=i;renderTabs();renderDay(animate);
+  const tab=$(`.tab[data-i="${i}"]`);
+  if(animate){tab.classList.add("pop");}
+  tab.scrollIntoView({inline:"center",block:"nearest"});
+  if(animate){
+    const y=$("#tabs").getBoundingClientRect().top;
+    if(y<64)window.scrollBy({top:y-70});
+  }
+}
+$("#tabs").addEventListener("click",e=>{
+  const b=e.target.closest(".tab");if(b)selectDay(+b.dataset.i);
+});
+/* 左右滑動切換 */
+let sx=0,sy=0;
+const dv=$("#dayView");
+dv.addEventListener("touchstart",e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+dv.addEventListener("touchend",e=>{
+  const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;
+  if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.8){
+    const n=cur+(dx<0?1:-1);if(n>=0&&n<DAYS.length)selectDay(n);
+  }
+},{passive:true});
+
+const todayIdx=DAYS.findIndex(x=>x.iso===twDate(new Date()));
+cur=todayIdx>=0?todayIdx:0;
+renderTabs();renderDay(false);
+
+/* =============== 清單 =============== */
+function isDone(it){return it.id in state?state[it.id]:!!it.done}
+function ckHTML(it){
+  return `<label class="ck"><input type="checkbox" data-id="${it.id}" ${isDone(it)?"checked":""}><span class="box">✓</span><span class="tx">${it.x}${it.s?`<small>${it.s}</small>`:""}</span></label>`;
+}
+function bar(key,all){
+  const n=all.filter(isDone).length,p=all.length?Math.round(n/all.length*100):0;
+  $(`#p-${key}-t`).textContent=`已完成 ${n} / ${all.length}`;
+  $(`#p-${key}-p`).textContent=p+"%";
+  $(`#p-${key}-b`).style.width=p+"%";
+}
+function mountList(key,box,html,all){
+  $(box).innerHTML=html;bar(key,all);
+  $(box).addEventListener("change",e=>{
+    const c=e.target.closest("input[data-id]");if(!c)return;
+    state[c.dataset.id]=c.checked;store.set(state);bar(key,all);
+  });
+}
+mountList("todo","#list-todo",TODO.map(ckHTML).join(""),TODO);
+mountList("before","#list-before",BEFORE.map(ckHTML).join(""),BEFORE);
+const packAll=PACK.flatMap(g=>g.items);
+mountList("pack","#list-pack",PACK.map(g=>`<div class="grp" style="background:var(--${["yellow","coral","green","blue","yellow"][PACK.indexOf(g)]})">${g.g}</div>${g.items.map(ckHTML).join("")}`).join(""),packAll);
+
+/* =============== 導覽列高亮 =============== */
+const links=[...document.querySelectorAll("#nav a")];
+const secs=links.map(a=>document.querySelector(a.getAttribute("href")));
+const io=new IntersectionObserver(es=>{
+  es.forEach(en=>{
+    if(en.isIntersecting){
+      const i=secs.indexOf(en.target);
+      links.forEach((a,j)=>a.classList.toggle("on",i===j));
+      links[i].scrollIntoView({inline:"center",block:"nearest"});
+    }
+  });
+},{rootMargin:"-30% 0px -60% 0px"});
+secs.forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
+
+</body></html>
